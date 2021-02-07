@@ -1,0 +1,79 @@
+{% extends "layout.html" %} {% block content %}
+<div class="row">
+  {% from "macro.html" import content_title %}
+  {{ content_title("フォーム") }}
+  <div class="col s12 m9">
+    <h5>タイトル</h5>
+    <form action="/form" method="post">
+      {{ content_form.csrf_token }}
+      <div class="col s12">
+        <div class="section">
+          <div class="input-field col s12 m6">
+            {{ content_form.title.label }} {{ content_form.title(placeholder="")
+            }}
+          </div>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="section">
+          <div class="input-field col s12 m6">
+            {{ content_form.price.label }} {{ content_form.price
+            }}
+          </div>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="section">
+          <p>{{ content_form.favorite.label }}</p>
+          {% for radio in content_form.favorite %}
+          <label class="col s12 m4">
+            {{ radio(class="with-gap") }}
+            <span>{{ radio.label }}</span>
+          </label>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="section">
+          <div class="input-field col s12 m6">
+            {{ content_form.country }} {{ content_form.country.label }}
+          </div>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="section">
+          <div class="col s12 m6">
+            <label>
+              {{ content_form.checked }}
+              <span>{{ content_form.checked.label }}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="section">
+          <div class="col s12 m6">
+            <div class="switch">
+              <label>
+                off {{ content_form.switch }}
+                <span class="lever"></span>
+                on
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="section">
+          <div class="col s12 m6">
+            {{ content_form.date.label }} {{
+            content_form.date(class="datepicker") }} {{ content_form.time.label
+            }} {{ content_form.time(class="timepicker") }}
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn">送信</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

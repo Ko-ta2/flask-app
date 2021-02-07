@@ -1,0 +1,20 @@
+<header class="row">
+  <div class="navbar-fixed hide-on-large-only">
+    <nav>
+      <div class="nav-wrapper">
+        <div class="col s12">
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <a href="#" class="brand-logo">F Log.</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <ul id="nav-mobile" class="sidenav sidenav-fixed">
+    <li><a href="#!" id="sidenav-header"><h4>F log.</h4></a></li>
+    {% for endpoint, menu in get_menus() %}
+    <li><a href="{{ url_for(endpoint) }}">{{menu}}</a></li>
+    {% endfor %}
+  </ul>
+</header>

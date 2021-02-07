@@ -1,0 +1,338 @@
+{% extends "layout.html" %} {% block content %}
+<div class="row">
+  <div class="col s12">
+    <h4 class="no-margin">
+      <blockquote class="no-margin">コンポーネントコレクション</blockquote>
+    </h4>
+  </div>
+  <div class="col s12 m9">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">タイトル</span>
+        <form action="/" method="post">
+          <div class="input-field col s6">
+            <label for="text" class="">名前</label>
+            <input type="text" id="value" name="value" placeholder="" />
+          </div>
+          <div class="row">
+            <label class="col s1">チェックボックス</label>
+            <label for="check1" class="col s3">
+              <input type="checkbox" id="check1" checked />
+              <span>チェックボックス1</span>
+            </label>
+            <label for="check2" class="col s3">
+              <input type="checkbox" id="check2" />
+              <span>チェックボックス2</span>
+            </label>
+            <label for="check3" class="col s3">
+              <input type="checkbox" id="check3" />
+              <span>チェックボックス3</span>
+            </label>
+          </div>
+          <div class="row">
+            <div class="chip">タグ1</div>
+            <div class="chip">タグ2</div>
+            <div class="chip">タグ3</div>
+          </div>
+          <div class="row">
+            <label class="col s1">タグ付け</label>
+            <div class="chips no-autoinit col s3"></div>
+          </div>
+          <div class="row">
+            <label class="col s1">日付</label>
+            <input type="text" class="datepicker col s3" />
+            <label class="col s1">時間</label>
+            <input type="text" class="timepicker col s3" />
+          </div>
+          <div class="row">
+            <label class="col s1">ラジオボタン</label>
+            <label for="radio1" class="col s3">
+              <input
+                class="with-gap"
+                name="group"
+                type="radio"
+                id="radio1"
+                checked
+              />
+              <span>ラジオ1</span>
+            </label>
+            <label for="radio2" class="col s3">
+              <input class="with-gap" name="group" type="radio" id="radio2" />
+              <span>ラジオ2</span>
+            </label>
+            <label for="radio3" class="col s3">
+              <input class="with-gap" name="group" type="radio" id="radio3" />
+              <span>ラジオ3</span>
+            </label>
+          </div>
+          <div class="input-field">
+            <select name="select" id="select">
+              <option value="" disabled selected>--選択肢--</option>
+              <option value="1">オプション1</option>
+              <option value="2">オプション2</option>
+              <option value="3">オプション3</option>
+            </select>
+            <label>セレクト</label>
+          </div>
+          <div class="row">
+            <div class="switch">
+              <label>
+                スイッチ
+                <input type="checkbox" />
+                <span class="lever"></span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn">送信</button>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12"><p class="left">left</p></div>
+      <div class="col s12"><p class="center">center</p></div>
+      <div class="col s12"><p class="right">right</p></div>
+      <div class="col s12">
+        <div class="section">セクション</div>
+        <div class="divider"></div>
+        <div class="section">セクション</div>
+      </div>
+    </div>
+    <div class="card-panel hoverable z-depth-1">コンテンツ</div>
+    <blockquote>blockquote</blockquote>
+    <div class="card">
+      <div class="card-content">
+        <table class="striped responsive-table">
+          <thead>
+            <tr>
+              {% for header in get_table_header() %}
+              <th>{{header}}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for data in get_table_data() %}
+            <tr>
+              <td>{{data["headcell1"]}}</td>
+              <td>{{data["headcell2"]}}</td>
+              <td>{{data["headcell3"]}}</td>
+              <td>{{data["headcell4"]}}</td>
+              <td>{{data["headcell5"]}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div class="center">
+          <ul class="pagination">
+            <li class="disabled">
+              <a href="#!"><i class="material-icons">chevron_left</i></a>
+            </li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect">
+              <a href="#!"><i class="material-icons">chevron_right</i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="truncate">
+        afjrapovjnf;aihreschgd;smghn;vklrutgh;dvlgtdh;nosghmdsgn;tmd;scdknfdsafrjeahd;ahrf;danreiu;fhreia;gislrgrslugralrldirngtuielsgirelagfijlrsgnutrisvbtarlnlghtu
+        dsghtkjdsmtj;sthgukeznvfujrghui
+      </p>
+    </div>
+    <div class="collection with-header">
+      <div class="collection-header">header</div>
+      <div class="collection-item">item1<span class="badge">100</span></div>
+      <div class="collection-item">item2<span class="new badge">500</span></div>
+      <div class="collection-item">
+        item3<span class="new badge" data-badge-caption="見出し">1000</span>
+      </div>
+      <div class="collection-item">
+        item4<span class="new badge" data-badge-caption="">100000</span>
+      </div>
+    </div>
+    <div>
+      <a href="#!" class="btn waves-effect waves-light">ボタン1</a>
+      <a href="#!" class="btn-floating waves-effect waves-light"
+        ><i class="material-icons">add</i></a
+      >
+      <a href="#!" class="btn-flat waves-effect waves-light">ボタン3</a>
+      <button type="submit" class="btn waves-effect">ボタン4</button>
+      <a href="#!" class="btn waves-effect waves-light disabled">ボタン1</a>
+    </div>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="col s12">
+          <a href="#!" class="breadcrumb">ステップ1</a>
+          <a href="#!" class="breadcrumb">ステップ2</a>
+          <a href="#!" class="breadcrumb">ステップ3</a>
+        </div>
+      </div>
+    </nav>
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">タイトル</span>
+        <p>コンテンツ</p>
+      </div>
+      <div class="card-action">
+        <a href="#!" class="btn waves-effect">アクション</a>
+      </div>
+    </div>
+    <div style="position: relative; height: 48px">
+      <div
+        class="fixed-action-btn click-to-toggle no-autoinit"
+        style="position: absolute; right: 0px"
+      >
+        <a class="btn-floating btn-large">
+          <i class="large material-icons">menu</i>
+        </a>
+        <ul>
+          <li>
+            <a class="btn-floating red"
+              ><i class="material-icons">insert_chart</i></a
+            >
+          </li>
+          <li>
+            <a class="btn-floating yellow darken-1"
+              ><i class="material-icons">format_quote</i></a
+            >
+          </li>
+          <li>
+            <a class="btn-floating green"
+              ><i class="material-icons">publish</i></a
+            >
+          </li>
+          <li>
+            <a class="btn-floating blue"
+              ><i class="material-icons">attach_file</i></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-wrapper">
+        <form>
+          <div class="input-field">
+            <input id="search" type="search" required />
+            <label class="label-icon" for="search"
+              ><i class="material-icons">search</i></label
+            >
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+      </div>
+    </nav>
+    <div class="progress">
+      <div class="determinate" style="width: 70%"></div>
+    </div>
+    <div class="progress">
+      <div class="indeterminate"></div>
+    </div>
+    <div class="carousel">
+      <img
+        class="carousel-item responsive-img circle"
+        src="{{ url_for('static', filename='img/autumn-5483537_640.png') }}"
+        alt="illust1"
+      />
+      <img
+        class="carousel-item responsive-img circle"
+        src="{{ url_for('static', filename='img/camp-4363073_640.png') }}"
+        alt="illust2"
+      />
+      <img
+        class="carousel-item responsive-img circle"
+        src="{{ url_for('static', filename='img/hummingbird-295026_640.png') }}"
+        alt="illust3"
+      />
+      <img
+        class="carousel-item responsive-img circle"
+        src="{{ url_for('static', filename='img/mountain-4694346_640.png') }}"
+        alt="illust4"
+      />
+      <img
+        class="carousel-item responsive-img circle"
+        src="{{ url_for('static', filename='img/traveling-4323759_640.png') }}"
+        alt="illust5"
+      />
+    </div>
+    <ul class="collapsible">
+      <li>
+        <div class="collapsible-header">ヘッダー</div>
+        <div class="collapsible-body">ボディ</div>
+      </li>
+      <li>
+        <div class="collapsible-header">ヘッダー</div>
+        <div class="collapsible-body">ボディ</div>
+      </li>
+      <li>
+        <div class="collapsible-header">ヘッダー</div>
+        <div class="collapsible-body">ボディ</div>
+      </li>
+    </ul>
+    <div>
+      <a href="#!" class="btn dropdown-trigger" data-target="dropdown-sample"
+        >ドロップダウン</a
+      >
+      <ul id="dropdown-sample" class="dropdown-content">
+        <li><a href="#!">保存</a></li>
+        <li><a href="#!">更新</a></li>
+        <li><a href="#!">複製</a></li>
+        <li><a href="#!">削除</a></li>
+      </ul>
+    </div>
+    <div class="slider no-autoinit">
+      <ul class="slides">
+        <li>
+          <img
+            src="{{ url_for('static', filename='img/traveling-4323759_640.png') }}"
+          />
+          <div class="caption left">
+            <h3>タイトル1</h3>
+            <h5>説明...</h5>
+          </div>
+        </li>
+        <li>
+          <div class="caption left">
+            <h3>タイトル2</h3>
+            <h5>説明...</h5>
+          </div>
+        </li>
+        <li>
+          <div class="caption left">
+            <h3>タイトル3</h3>
+            <h5>説明...</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <button class="btn waves-effect modal-trigger" data-target="modal-sample">
+      モーダル
+    </button>
+    <div id="modal-sample" class="modal">
+      <div class="modal-content">
+        <h4>モーダル</h4>
+        <p>内容</p>
+      </div>
+    </div>
+    <ul class="tabs tabs-fixed-width">
+      <li class="tab"><a href="#tab1">タブ1</a></li>
+      <li class="tab"><a href="#tab2">タブ2</a></li>
+      <li class="tab"><a href="#tab3">タブ3</a></li>
+    </ul>
+    <div id="tab1" class="col s12 white"><p>タブ1のコンテンツ</p></div>
+    <div id="tab2" class="col s12 white"><p>タブ2のコンテンツ</p></div>
+    <div id="tab3" class="col s12 white"><p>タブ3のコンテンツ</p></div>
+    <button
+      class="btn waves-effect"
+      onclick="M.toast({html: 'トーストチップ', classes:'green'})"
+    >
+      トースト
+    </button>
+  </div>
+</div>
+{% endblock %}

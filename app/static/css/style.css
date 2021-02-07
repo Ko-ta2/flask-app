@@ -1,0 +1,44 @@
+/* レイアウト */
+body {
+  overflow-x: hidden;
+}
+
+/* フッターを最下部に固定 */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+
+/* ヘッダー幅を画面いっぱいに固定 */
+header {
+  min-width: 100vw;
+}
+
+/* オートコンプリートの背景色をリセット */
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+/* サイドバー */
+header, main, footer {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+/* サイドバーヘッダー */
+#sidenav-header:hover {
+  background-color: transparent;
+}
+
+.no-margin {
+  margin: 0px !important;
+}

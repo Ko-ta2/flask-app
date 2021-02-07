@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row">
+    {% from "macro.html" import content_title %}
+    {{ content_title("グラフ") }}
+    <div class="col s12">
+        ...
+    </div>
+</div>
+{% endblock %}
